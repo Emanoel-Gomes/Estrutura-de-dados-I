@@ -104,3 +104,7 @@ export default class LinkedList {
     return objString;
   }
 }
+
+lista = new LinkedList()
+lista.insert("a",0)
+print(lista)
