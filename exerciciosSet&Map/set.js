@@ -28,18 +28,18 @@ conjuntoB.add(20);
 conjuntoB.add(30);
 conjuntoB.add(40);
 
-// --------- Union ----------
+// União
 const union = (set1, set2) => {
   const unionAb = new Set();
   set1.forEach(value => unionAb.add(value));
   set2.forEach(value => unionAb.add(value));
   return unionAb;
 };
-console.log(union(conjuntoA, conjuntoB)); // {1, 2, 3, 4}
+console.log(union(conjuntoA, conjuntoB)); // {10, 20, 30, 40}
 
-console.log(new Set([...conjuntoA, ...conjuntoB])); // {1, 2, 3, 4}
+console.log(new Set([...conjuntoA, ...conjuntoB])); // {10, 20, 30, 40}
 
-// --------- Intersection ----------
+// Intersecção
 const intersection = (set1, set2) => {
   const intersectionSet = new Set();
   set1.forEach(value => {
@@ -49,14 +49,12 @@ const intersection = (set1, set2) => {
   });
   return intersectionSet;
 };
-console.log(intersection(conjuntoA, conjuntoB)); // {2, 3}
+console.log(intersection(conjuntoA, conjuntoB)); // {20, 30}
 
-console.log(new Set([...conjuntoA].filter(x => conjuntoB.has(x)))); // {2, 3}
+console.log(new Set([...conjuntoA].filter(x => conjuntoB.has(x)))); // {20, 30}
 
-// alternative - works on FF only
-// console.log(new Set([x for (x of setA) if (setB.has(x))]));
 
-// --------- Difference ----------
+// Diferença
 const difference = (set1, set2) => {
   const differenceSet = new Set();
   set1.forEach(value => {
@@ -66,6 +64,6 @@ const difference = (set1, set2) => {
   });
   return differenceSet;
 };
-console.log(difference(conjuntoA, conjuntoB)); //{ 1}
-console.log(new Set([...conjuntoA].filter(x => !conjuntoB.has(x)))); // {1}
+console.log(difference(conjuntoA, conjuntoB)); //{ 10}
+console.log(new Set([...conjuntoA].filter(x => !conjuntoB.has(x)))); // {10}
 
